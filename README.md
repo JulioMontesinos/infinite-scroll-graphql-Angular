@@ -2,6 +2,17 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
+This project demonstrates an **infinite scrolling web application** built with Angular. The application fetches data from a GraphQL API and displays a list of images with features like filtering through a search bar, liking items with live updates, and endless scrolling with random images after the API's data limit is reached.
+
+## Features
+
+- **Infinite Scroll**: Automatically loads more images as the user scrolls down.
+- **Search Bar**: Filters images based on a search query.
+- **Like Button**: Allows users to like images with real-time updates.
+- **GraphQL Integration**: Fetches and manipulates data using a GraphQL API.
+- **Responsive Design**: Adapts to different screen sizes for a seamless user experience.
+- **Send Icon**: Present in the UI but currently has no functionality.
+
 ## Development server
 
 To start a local development server, run:
