@@ -1,0 +1,44 @@
+<div class="image-card">
+    <div class="price-tag" *ngIf="image?.price">
+        <span>{{ image.price | number:'1.2-2' }} €</span>
+    </div>
+    <img [src]="image.picture" [alt]="image.title" class="image" />
+
+    <div class="info">
+        <h3 class="title">{{ image.title }}</h3>
+        <p class="author">
+        by <span class="author-name">{{ image.author }}</span>
+        </p>
+
+        <!-- Actions for mobile -->
+        <div class="actions-mobile">
+        <app-like-button
+            [initialLiked]="image.liked"
+            [likes]="image.likesCount"
+            (likeToggle)="handleLikeToggle()"
+            data-testid="like-button-mobile"
+        ></app-like-button>
+        <div class="action-button">
+            <span class="action-count">0</span>
+            <img src="/share_black.svg" alt="Share" />
+        </div>
+        </div>
+    </div>
+
+    <!-- Floating actions for larger screens -->
+    <div class="actions">
+        <div class="action-button" (click)="handleLikeToggle()" data-testid="like-button">
+        <img
+            [src]="image.liked ? '/like_red.svg' : '/like_white.svg'"
+            alt="Like"
+        />
+        <span class="action-count" data-testid="likes-count">
+            {{ image.likesCount }}
+        </span>
+        </div>
+        <div class="action-button">
+        <img src="/share_white.svg" alt="Share" />
+        <span class="action-count">0</span>
+        </div>
+    </div>
+</div>

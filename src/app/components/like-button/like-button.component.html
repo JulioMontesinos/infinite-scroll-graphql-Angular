@@ -1,0 +1,7 @@
+<div class="action-button" (click)="toggleLike()" [attr.data-testid]="dataTestId">
+    <img
+      [src]="liked ? '/like_red.svg' : '/like_black.svg'"
+      [alt]="liked ? 'Unlike' : 'Like'"
+    />
+    <span class="action-count">{{ likesCount }}</span>
+</div>

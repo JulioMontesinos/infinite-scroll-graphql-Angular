@@ -1,0 +1,16 @@
+<div *ngIf="error" class="centered-message">{{ error }}</div>
+    <div *ngIf="loading && allImages.length === 0" class="centered-message">
+      Loading...
+    </div>
+
+    <div *ngIf="!loading && allImages.length === 0" class="centered-message">
+      No items found for this filter
+    </div>
+
+    <app-image-grid
+      *ngIf="allImages.length > 0"
+      [images]="allImages"
+    ></app-image-grid>
+
+    <!-- For IntersectionObserver -->
+<div #infiniteScrollTarget style="height: 1px;"></div>

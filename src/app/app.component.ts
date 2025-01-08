@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { ImageLoaderComponent } from './components/image-loader/image-loader.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [HeaderComponent, ImageLoaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./styles/app.css'] 
 })
 export class AppComponent {
-  title = 'infinite-scroll-angular';
+  searchQuery = '';
+
+  handleSearch(newQuery: string) {
+    this.searchQuery = newQuery;
+  }
 }
